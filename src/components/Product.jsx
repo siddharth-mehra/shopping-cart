@@ -6,12 +6,7 @@ import axios from 'axios'
 import React,{ useCallback, useMemo } from "react";
 
 
-
-const API_KEY='AIzaSyBVwQEQ6qRuPmPd7TIwhvRy3l0PamGnWzU'
-const CSE_ID='d588652591e37436b'
-
 const Product = React.memo(({ post }) => {
-    
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
@@ -33,8 +28,8 @@ const Product = React.memo(({ post }) => {
         try {
             const response = await axios.get('https://www.googleapis.com/customsearch/v1', {
                 params: {
-                    key: API_KEY,
-                    cx: CSE_ID,
+                    key: process.env.REACT_APP_API_KEY,
+                    cx: process.env.REACT_APP_CSE_ID,
                     q: query,
                     searchType: 'image',
                     imgType: 'photo',
