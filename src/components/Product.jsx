@@ -6,8 +6,8 @@ import axios from 'axios'
 import React,{ useCallback, useMemo } from "react";
 
 
-REACT_APP_API_KEY='AIzaSyBVwQEQ6qRuPmPd7TIwhvRy3l0PamGnWzU'
-REACT_APP_CSE_ID='d588652591e37436b'
+const REACT_APP_API_KEY='AIzaSyBVwQEQ6qRuPmPd7TIwhvRy3l0PamGnWzU'
+const REACT_APP_CSE_ID='d588652591e37436b'
 
 const Product = React.memo(({ post }) => {
     const cart = useSelector((state) => state.cart);
