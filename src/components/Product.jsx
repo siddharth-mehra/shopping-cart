@@ -27,7 +27,8 @@ const Product = React.memo(({ post }) => {
         toast.error("Removed Item");
     }, [dispatch, post.id]);
 
-    const searchSimilarImages = useCallback(async (query) => {
+    const searchSimilarImages =useMemo(()=>
+        async (query) => {
         try {
             const response = await axios.get('https://www.googleapis.com/customsearch/v1', {
                 params: {
@@ -47,7 +48,7 @@ const Product = React.memo(({ post }) => {
         } catch (error) {
             console.log('Error searching images:', error);
         }
-    }, []);
+    },[]);
 
  
 
